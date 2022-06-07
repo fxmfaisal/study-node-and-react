@@ -1,0 +1,38 @@
+@base_url = http://localhost:8020
+
+GET {{base_url}}
+content-type: application/json
+
+###
+
+GET {{base_url}}/users
+content-type: application/json
+
+###
+
+GET {{base_url}}/users/1
+content-type: application/json
+
+###
+
+DELETE {{base_url}}/users/1
+content-type: application/json
+
+###
+
+POST {{base_url}}/user/add
+content-type: application/json
+
+{
+  "id": "100",
+  "name": "New User"
+}
+
+###
+
+PUT {{base_url}}/user/1
+content-type: application/json
+
+{
+  "name": "Azwar Syam Test"
+}
