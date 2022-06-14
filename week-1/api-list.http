@@ -30,9 +30,51 @@ content-type: application/json
 
 ###
 
+### POST with empty name
+POST {{base_url}}/user/add
+content-type: application/json
+
+{
+  "id": "100",
+  "name": ""
+}
+
+###
+
+### POST with more than 100 chars
+POST {{base_url}}/user/add
+content-type: application/json
+
+{
+  "id": "100",
+  "name": "New User New User New User New User New User New User New User New User New User New User New User 11"
+}
+
+###
+
 PUT {{base_url}}/user/1
 content-type: application/json
 
 {
   "name": "Azwar Syam Test"
+}
+
+###
+
+### PUT with empty name
+PUT {{base_url}}/user/1
+content-type: application/json
+
+{
+  "name": ""
+}
+
+###
+
+### PUT with more than 100 chars
+PUT {{base_url}}/user/1
+content-type: application/json
+
+{
+  "name": "New User New User New User New User New User New User New User New User New User New User New User 11"
 }

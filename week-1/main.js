@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const Validation = require('./validation');
+const UtilsModule = require('./utils');
 const app = express();
 const usersFilePath = path.resolve(__dirname, 'users.json');
 
@@ -103,7 +105,17 @@ app.post('/user/add', (req, res) => {
     const users = JSON.parse(data);
     const bodyData = req.body;
     const id = bodyData.id;
-    const name = bodyData.name;
+    const name = UtilsModule.getTrimmedString(bodyData.name);
+    const validation = Validation.executeValidations([
+      [Validation.isNameCorrect, name]
+    ]);
+
+    if (!validation.correct) {
+      return res.json({
+        result: 'INVALID',
+        message: validation.message
+      });
+    }
     
     if (users[id]) {
       res.json({
@@ -137,8 +149,19 @@ app.put('/user/:userId', (req, res) => {
     const bodyData = req.body;
     const beforeUpdate = JSON.stringify(selectedUser);
     const updated = {
-      name: bodyData.name
+      name: UtilsModule.getTrimmedString(bodyData.name)
     };
+
+    const validation = Validation.executeValidations([
+      [Validation.isNameCorrect, updated.name]
+    ]);
+
+    if (!validation.correct) {
+      return res.json({
+        result: 'INVALID',
+        message: validation.message
+      });
+    }
 
     if (selectedUser) {
       Object.assign(selectedUser, updated);
