@@ -1,0 +1,80 @@
+@base_url = http://localhost:8020
+
+GET {{base_url}}
+content-type: application/json
+
+###
+
+GET {{base_url}}/users
+content-type: application/json
+
+###
+
+POST {{base_url}}/user/add
+content-type: application/json
+
+{
+  "username": "faisal",
+  "name": "Faisal Err"
+}
+
+###
+
+GET {{base_url}}/users/faisal
+content-type: application/json
+
+###
+
+DELETE {{base_url}}/users/faisal
+content-type: application/json
+
+###
+
+### POST with empty name
+POST {{base_url}}/user/add
+content-type: application/json
+
+{
+  "username": "faisal",
+  "name": ""
+}
+
+###
+
+### POST with more than 100 chars
+POST {{base_url}}/user/add
+content-type: application/json
+
+{
+  "username": "faisal",
+  "name": "New User New User New User New User New User New User New User New User New User New User New User 11"
+}
+
+###
+
+PUT {{base_url}}/user/faisal
+content-type: application/json
+
+{
+  "name": "Faisal Err Changed"
+}
+
+###
+
+### PUT with empty name
+PUT {{base_url}}/user/faisal
+content-type: application/json
+
+{
+  "name": ""
+}
+
+###
+
+### PUT with more than 100 chars
+PUT {{base_url}}/user/faisal
+content-type: application/json
+
+{
+  "name": "New User New User New User New User New User New User New User New User New User New User New User 11"
+}
