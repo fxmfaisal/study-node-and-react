@@ -5,12 +5,15 @@ export default class Home extends React.Component {
 
   render() {
     return <>
-      <p>Hello, this is home!</p>
-      <ol>
-        <li><Link to="/dashboard">Click here to Dashboard!</Link></li>
-        <li><Link to="/employee">Click here to Employee!</Link></li>
-        <li><Link to="/employee/add">Click here to Add Employee!</Link></li>
-      </ol>
+      <div className="container">
+        <h1>Hello, this is home!</h1>
+        <p>Some available pages to navigate:</p>
+        <ol>
+          <li><a href="/dashboard">Click here to Dashboard!</a></li>
+          <li><a href="/employee">Click here to Employee!</a></li>
+          <li><a href="/employee/add">Click here to Add Employee!</a></li>
+        </ol>
+      </div>
     </>
   }
 

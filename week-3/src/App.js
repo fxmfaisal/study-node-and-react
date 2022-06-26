@@ -1,4 +1,3 @@
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home';
 import Debug from './components/debug';
@@ -8,7 +7,7 @@ import EmployeeAdd from './components/employee/add';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
