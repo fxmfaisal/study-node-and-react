@@ -11,3 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
+exercise-files
+build
+coverage

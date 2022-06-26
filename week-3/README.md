@@ -23,7 +23,7 @@ npm install
 Navigate your command prompt to `/week-3` directory, and type in:
 
 ```shell
-node main.js
+npm start
 ```
 
 ## Meeting Agenda and Notes
