@@ -35,3 +35,14 @@ node main.js
 ### Objectives
 
 1. TBD
+
+
+### Assignments
+
+Please take your time to do assignment as follows:
+
+1. Convert HTML homepage index.html into ReactJS. [HTML Template can download at here](https://drive.google.com/drive/folders/1LOPp8fI7GyEpMi0lL65SaZx6TBukDpPo?usp=sharing).
+1. Develop a list page which contain a table employee.
+    1. Reference this template `tables-basic.html`
+1. Develop a form to allow enter new employee
+    1. Reference form at `pages-user-profile.html` > tab Edit. Or `forms-advanced.html`
