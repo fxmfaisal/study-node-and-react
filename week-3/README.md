@@ -34,7 +34,7 @@ npm start
 
 ### Objectives
 
-1. TBD
+1. Know the basic of React.js
 
 
 ### Assignments
